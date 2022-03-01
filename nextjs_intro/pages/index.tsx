@@ -1,5 +1,22 @@
+import { FC, useState } from "react";
+import NavBar from "../components/NavBar";
+
 export default function Home() {
-  return 'hi';
+  const [counter, setCounter] = useState(0);
+  return (
+    <div>
+      <NavBar />
+      <h1>Hello {counter}</h1>
+      {/* <button
+        onClick={() => {
+          setCounter(counter + 1);
+          // setCounter((prev) => prev + 1);
+        }}
+      >
+        +
+      </button> */}
+    </div>
+  );
 }
 
 // library는 내가원는 것을 사용하는것
