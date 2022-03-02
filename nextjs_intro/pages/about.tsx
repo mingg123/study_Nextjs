@@ -1,3 +1,9 @@
+import NavBar from "../components/NavBar";
+
 export default function Potato() {
-  return 'about us';
+  return (
+    <div>
+      <NavBar />
+    </div>
+  );
 }
