@@ -9,18 +9,22 @@ const NavBar = () => {
   return (
     <nav>
       <Link href="/">
-        <a className={`${style.link} ${style.actiove}`}>Home</a>
+        <a>Home</a>
       </Link>
       <Link href="/about">
-        <a
-          className={[
-            style.link,
-            router.pathname === "/about" ? `${style.actiove}` : "",
-          ].join(" ")}
-        >
-          About
-        </a>
+        <a>About</a>
       </Link>
+      <style jsx>{`
+        nav {
+          background-color: tomato;
+        }
+        .active {
+          color: red;
+        }
+        .none {
+          color: blue;
+        }
+      `}</style>
     </nav>
   );
 };
