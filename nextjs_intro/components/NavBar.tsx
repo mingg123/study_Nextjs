@@ -17,11 +17,15 @@ const NavBar = () => {
         <a>About</a>
       </Link>
       <style jsx>{`
-        nav {
-          background-color: tomato;
+        .container {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          padding: 20px;
+          gap: 20px;
         }
-        .active {
-          color: red;
+        .movie img {
+          max-width: 100%;
+          border-radius: 12px;
         }
         .none {
           color: blue;

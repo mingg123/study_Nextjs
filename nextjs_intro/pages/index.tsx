@@ -20,14 +20,15 @@ interface Movie {
   video: boolean;
   vote_average: number;
 }
-const API_KEY = '8c0de685bc8b7cd7bd8765231de30ac8';
+
 export default function Home() {
   const [movies, setMovies] = useState<Movie[]>([]);
   useEffect(() => {
     (async () => {
       const { results } = await (
         await fetch(
-          `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`
+          `/api/movies`
+          // `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`
         )
       ).json();
       setMovies(results);
@@ -50,12 +51,17 @@ export default function Home() {
       {!movies && <h4>Loading...</h4>}
       {movies?.map(movie => (
         <div key={movie.id}>
+          <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
           <h4>{movie.original_title}</h4>
         </div>
       ))}
       <style jsx global>{`
         a {
           color: white;
+        }
+        img {
+          width: 300px;
+          height: 500px;
         }
       `}</style>
     </div>
